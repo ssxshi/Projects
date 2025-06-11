@@ -20,8 +20,6 @@ Vector::Vector(int initSize)
   this->data.resize(initSize, DEFAULT_VALUE);
 }
 
-// METHODS
-
 // STATIC
 bool Vector::isBigger(std::vector<double> first, std::vector<double> second)
 {
@@ -43,8 +41,14 @@ std::string Vector::toString(std::vector<double> toPrint)
   return toReturn;
 }
 
-
-// OBJECT
+bool sizeCheck(std::vector<double> first, std::vector<double> second){
+  if (first.size() != second.size())
+  {
+    std::cout << "VECTOR SIZES DON'T MATCH!" << std::endl;
+    return false;
+  }
+  return true;
+}
 
 // ARITHMETIC
 std::optional<Vector> Vector::add(std::vector<double> addWith)
@@ -74,6 +78,9 @@ std::optional<Vector> Vector::add(std::vector<double> addWith)
 
   return sum;
 }
+std::optional<Vector> Vector::subtract(std::vector<double> subWaith){
+
+}
 void Vector::mult(double scalar)
 {
   for (int i = 0; i < this->data.size(); i++)
@@ -83,11 +90,7 @@ void Vector::mult(double scalar)
 }
 std::optional<double> Vector::dot(std::vector<double> dotWith)
 {
-  if (this->getSize() != dotWith.size())
-  {
-    std::cout << "VECTOR SIZES DON'T MATCH!" << std::endl;
-    return std::nullopt;
-  }
+  if (not sizeCheck(this->data, dotWith)){return std::nullopt; }
 
   double sum = 0.0;
   for (int i = 0; i < this->getSize(); i++)
@@ -129,6 +132,14 @@ std::vector<double> Vector::unit()
   }
 
   return unitV;
+}
+std::optional<double> Vector::valueAt(int index){
+  if (index < 0 || index >= this->data.size()){
+    std::cout << "INDEX OUT OF BOUNDS!!" << std::endl;
+    return std::nullopt;
+  }
+
+  return this->data[index];
 }
 
 std::string Vector::tellMe()

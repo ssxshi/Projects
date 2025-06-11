@@ -19,6 +19,7 @@ class Vector{
     static std::string toString(std::vector<double> toPrint);
 
     std::optional<Vector> add(std::vector<double> addWith);
+    std::optional<Vector> subtract(std::vector<double> subWith);
     void mult(double scalar);
     std::optional<double> dot(std::vector<double> dotWith);
 
@@ -27,6 +28,7 @@ class Vector{
     int getSize();
     double magnitude();
     std::vector<double> unit();
+    std::optional<double> valueAt(int index);
 };
 
 #endif

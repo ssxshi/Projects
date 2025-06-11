@@ -18,7 +18,7 @@ class Vector{
 
     static std::string toString(std::vector<double> toPrint);
 
-    Vector add(std::vector<double> addWith);
+    std::optional<Vector> add(std::vector<double> addWith);
     void mult(double scalar);
     std::optional<double> dot(std::vector<double> dotWith);
 

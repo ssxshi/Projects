@@ -41,7 +41,7 @@ std::string Vector::toString(std::vector<double> toPrint)
   return toReturn;
 }
 
-bool sizeCheck(std::vector<double> first, std::vector<double> second){
+bool sizeEqual(std::vector<double> first, std::vector<double> second){
   if (first.size() != second.size())
   {
     std::cout << "VECTOR SIZES DON'T MATCH!" << std::endl;
@@ -53,10 +53,7 @@ bool sizeCheck(std::vector<double> first, std::vector<double> second){
 // ARITHMETIC
 std::optional<Vector> Vector::add(std::vector<double> addWith)
 {
-  if (this->getSize() != addWith.size()){
-    std::cout << "VECTOR SIZES DON'T MATCH!" << std::endl;
-    return std::nullopt;
-  }
+  if (not sizeEqual(this->data, addWith)){return std::nullopt;}
   std::vector<double> ours;
   Vector sum = Vector(0);
 
@@ -79,7 +76,27 @@ std::optional<Vector> Vector::add(std::vector<double> addWith)
   return sum;
 }
 std::optional<Vector> Vector::subtract(std::vector<double> subWaith){
+  if (not sizeEqual(this->data, subWaith)){return std::nullopt;}
+  std::vector<double> ours;
+  Vector diff = Vector(0);
 
+  if (isBigger(this->data, subWaith))
+  {
+    subWaith = lengthen(subWaith, this->data.size());
+    ours = this->data;
+  }
+  else
+  {
+    ours = lengthen(this->data, subWaith.size());
+  }
+
+  diff.data.resize(ours.size());
+  for (size_t i = 0; i < ours.size(); ++i)
+  {
+    diff.data[i] = ours[i] - subWaith[i];
+  }
+
+  return diff;
 }
 void Vector::mult(double scalar)
 {
@@ -90,7 +107,7 @@ void Vector::mult(double scalar)
 }
 std::optional<double> Vector::dot(std::vector<double> dotWith)
 {
-  if (not sizeCheck(this->data, dotWith)){return std::nullopt; }
+  if (not sizeEqual(this->data, dotWith)){return std::nullopt; }
 
   double sum = 0.0;
   for (int i = 0; i < this->getSize(); i++)
@@ -99,6 +116,19 @@ std::optional<double> Vector::dot(std::vector<double> dotWith)
   }
 
   return sum;
+}
+std::vector<double> Vector::unit()
+{
+  std::vector<double> unitV = {};
+  unitV.resize(this->data.size(), DEFAULT_VALUE);
+  int magnitude = this->magnitude();
+
+  for (int i = 0; i < this->data.size(); i++)
+  {
+    unitV[i] = this->getData()[i] / magnitude;
+  }
+
+  return unitV;
 }
 
 // GETTERS
@@ -119,19 +149,6 @@ double Vector::magnitude()
   }
 
   return sqrt(sum);
-}
-std::vector<double> Vector::unit()
-{
-  std::vector<double> unitV = {};
-  unitV.resize(this->data.size(), DEFAULT_VALUE);
-  int magnitude = this->magnitude();
-
-  for (int i = 0; i < this->data.size(); i++)
-  {
-    unitV[i] = this->getData()[i] / magnitude;
-  }
-
-  return unitV;
 }
 std::optional<double> Vector::valueAt(int index){
   if (index < 0 || index >= this->data.size()){

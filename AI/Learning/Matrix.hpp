@@ -1,6 +1,7 @@
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
 
+#include <iostream>
 #include <vector>
 #include <optional>
 
@@ -17,6 +18,7 @@ class Matrix{
     Matrix(int rows, int cols);
 
     std::optional<double> valueAt(int row, int col);
+    std::string tellMe();
 };
 
 #endif

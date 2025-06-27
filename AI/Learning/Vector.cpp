@@ -19,17 +19,13 @@ Vector::Vector(int initSize)
   this->size = initSize;
   this->data.resize(initSize, DEFAULT_VALUE);
 }
+Vector::Vector()
+{
+  this->size = 0;
+  this->data = {};
+}
 
 // STATIC
-bool Vector::isBigger(std::vector<double> first, std::vector<double> second)
-{
-  return first.size() > second.size();
-}
-std::vector<double> Vector::lengthen(std::vector<double> toChange, int length)
-{
-  toChange.resize(length, DEFAULT_VALUE);
-  return toChange;
-}
 std::string Vector::toString(std::vector<double> toPrint)
 {
   std::string toReturn = "{";
@@ -51,49 +47,25 @@ bool sizeEqual(std::vector<double> first, std::vector<double> second){
 }
 
 // ARITHMETIC
-std::optional<Vector> Vector::add(std::vector<double> addWith)
+std::optional<Vector> Vector::add(Vector addWith)
 {
-  if (not sizeEqual(this->data, addWith)){return std::nullopt;}
-  std::vector<double> ours;
-  Vector sum = Vector(0);
+  if (not sizeEqual(this->data, addWith.getData())){return std::nullopt;}
+  Vector sum = Vector(this->data.size());
 
-  if (isBigger(this->data, addWith))
+  for (size_t i = 0; i < this->data.size(); i++)
   {
-    addWith = lengthen(addWith, this->data.size());
-    ours = this->data;
-  }
-  else
-  {
-    ours = lengthen(this->data, addWith.size());
-  }
-
-  sum.data.resize(ours.size());
-  for (size_t i = 0; i < ours.size(); ++i)
-  {
-    sum.data[i] = ours[i] + addWith[i];
+    sum.data[i] = this->data[i] + addWith.getData()[i];
   }
 
   return sum;
 }
-std::optional<Vector> Vector::subtract(std::vector<double> subWaith){
-  if (not sizeEqual(this->data, subWaith)){return std::nullopt;}
-  std::vector<double> ours;
-  Vector diff = Vector(0);
+std::optional<Vector> Vector::subtract(Vector subWaith){
+  if (not sizeEqual(this->data, subWaith.getData())){return std::nullopt;}
+  Vector diff = Vector(this->data.size());
 
-  if (isBigger(this->data, subWaith))
+  for (size_t i = 0; i < this->data.size(); i++)
   {
-    subWaith = lengthen(subWaith, this->data.size());
-    ours = this->data;
-  }
-  else
-  {
-    ours = lengthen(this->data, subWaith.size());
-  }
-
-  diff.data.resize(ours.size());
-  for (size_t i = 0; i < ours.size(); ++i)
-  {
-    diff.data[i] = ours[i] - subWaith[i];
+    diff.data[i] = this->data[i] - subWaith.getData()[i];
   }
 
   return diff;
@@ -105,14 +77,14 @@ void Vector::mult(double scalar)
     this->data[i] *= scalar;
   }
 }
-std::optional<double> Vector::dot(std::vector<double> dotWith)
+std::optional<double> Vector::dot(Vector dotWith)
 {
-  if (not sizeEqual(this->data, dotWith)){return std::nullopt; }
+  if (not sizeEqual(this->data, dotWith.getData())){return std::nullopt; }
 
   double sum = 0.0;
   for (int i = 0; i < this->getSize(); i++)
   {
-    sum += (this->getData()[i] * dotWith[i]);
+    sum += (this->getData()[i] * dotWith.getData()[i]);
   }
 
   return sum;
@@ -162,4 +134,9 @@ std::optional<double> Vector::valueAt(int index){
 std::string Vector::tellMe()
 {
   return toString(this->data);
+}
+
+//SETTERS
+void Vector::setValue(int pos, double value){
+  this->data[pos] = value;
 }

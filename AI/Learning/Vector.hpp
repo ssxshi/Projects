@@ -15,13 +15,15 @@ class Vector{
   public:
     Vector(std::vector<double> initList);
     Vector(int initSize);
+    Vector();
 
     static std::string toString(std::vector<double> toPrint);
 
-    std::optional<Vector> add(std::vector<double> addWith);
-    std::optional<Vector> subtract(std::vector<double> subWith);
+    std::optional<Vector> add(Vector addWith);
+    std::optional<Vector> subtract(Vector subWith);
     void mult(double scalar);
-    std::optional<double> dot(std::vector<double> dotWith);
+    void setValue(int pos, double val);
+    std::optional<double> dot(Vector dotWith);
 
     std::string tellMe();
     std::vector<double> getData();

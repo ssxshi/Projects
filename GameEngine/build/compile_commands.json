@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/kagam/Documents/C++/Projects/GameEngine/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/GameEngine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/GameEngine.dir/src/main.cpp.obj -c C:/Users/kagam/Documents/C++/Projects/GameEngine/src/main.cpp",
+  "file": "C:/Users/kagam/Documents/C++/Projects/GameEngine/src/main.cpp",
+  "output": "CMakeFiles/GameEngine.dir/src/main.cpp.obj"
+}
+]

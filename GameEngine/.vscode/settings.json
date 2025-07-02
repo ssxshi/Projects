@@ -1,0 +1,9 @@
+{
+  "cmake.generator": "Unix Makefiles",
+  "cmake.preferredGenerators": ["Unix Makefiles"],
+  "cmake.configureSettings": {
+    "CMAKE_C_COMPILER": "C:/msys64/mingw64/bin/gcc.exe",
+    "CMAKE_CXX_COMPILER": "C:/msys64/mingw64/bin/g++.exe"
+  },
+  "cmake.buildDirectory": "${workspaceFolder}/build"
+}

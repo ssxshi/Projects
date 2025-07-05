@@ -129,6 +129,78 @@ GameEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/build
 .PHONY : GameEngine/fast
 
+src/EBO.obj: src/EBO.cpp.obj
+.PHONY : src/EBO.obj
+
+# target to build an object file
+src/EBO.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/EBO.cpp.obj
+.PHONY : src/EBO.cpp.obj
+
+src/EBO.i: src/EBO.cpp.i
+.PHONY : src/EBO.i
+
+# target to preprocess a source file
+src/EBO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/EBO.cpp.i
+.PHONY : src/EBO.cpp.i
+
+src/EBO.s: src/EBO.cpp.s
+.PHONY : src/EBO.s
+
+# target to generate assembly for a file
+src/EBO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/EBO.cpp.s
+.PHONY : src/EBO.cpp.s
+
+src/VAO.obj: src/VAO.cpp.obj
+.PHONY : src/VAO.obj
+
+# target to build an object file
+src/VAO.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/VAO.cpp.obj
+.PHONY : src/VAO.cpp.obj
+
+src/VAO.i: src/VAO.cpp.i
+.PHONY : src/VAO.i
+
+# target to preprocess a source file
+src/VAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/VAO.cpp.i
+.PHONY : src/VAO.cpp.i
+
+src/VAO.s: src/VAO.cpp.s
+.PHONY : src/VAO.s
+
+# target to generate assembly for a file
+src/VAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/VAO.cpp.s
+.PHONY : src/VAO.cpp.s
+
+src/VBO.obj: src/VBO.cpp.obj
+.PHONY : src/VBO.obj
+
+# target to build an object file
+src/VBO.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/VBO.cpp.obj
+.PHONY : src/VBO.cpp.obj
+
+src/VBO.i: src/VBO.cpp.i
+.PHONY : src/VBO.i
+
+# target to preprocess a source file
+src/VBO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/VBO.cpp.i
+.PHONY : src/VBO.cpp.i
+
+src/VBO.s: src/VBO.cpp.s
+.PHONY : src/VBO.s
+
+# target to generate assembly for a file
+src/VBO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/VBO.cpp.s
+.PHONY : src/VBO.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -153,6 +225,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/shader.obj: src/shader.cpp.obj
+.PHONY : src/shader.obj
+
+# target to build an object file
+src/shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/shader.cpp.obj
+.PHONY : src/shader.cpp.obj
+
+src/shader.i: src/shader.cpp.i
+.PHONY : src/shader.i
+
+# target to preprocess a source file
+src/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/shader.cpp.i
+.PHONY : src/shader.cpp.i
+
+src/shader.s: src/shader.cpp.s
+.PHONY : src/shader.s
+
+# target to generate assembly for a file
+src/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/src/shader.cpp.s
+.PHONY : src/shader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... GameEngine"
+	@echo "... src/EBO.obj"
+	@echo "... src/EBO.i"
+	@echo "... src/EBO.s"
+	@echo "... src/VAO.obj"
+	@echo "... src/VAO.i"
+	@echo "... src/VAO.s"
+	@echo "... src/VBO.obj"
+	@echo "... src/VBO.i"
+	@echo "... src/VBO.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/shader.obj"
+	@echo "... src/shader.i"
+	@echo "... src/shader.s"
 .PHONY : help
 
 

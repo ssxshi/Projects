@@ -1,8 +1,32 @@
 [
 {
   "directory": "C:/Users/kagam/Documents/C++/Projects/GameEngine/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/GameEngine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/GameEngine.dir/src/EBO.cpp.obj -c C:/Users/kagam/Documents/C++/Projects/GameEngine/src/EBO.cpp",
+  "file": "C:/Users/kagam/Documents/C++/Projects/GameEngine/src/EBO.cpp",
+  "output": "CMakeFiles/GameEngine.dir/src/EBO.cpp.obj"
+},
+{
+  "directory": "C:/Users/kagam/Documents/C++/Projects/GameEngine/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/GameEngine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/GameEngine.dir/src/VAO.cpp.obj -c C:/Users/kagam/Documents/C++/Projects/GameEngine/src/VAO.cpp",
+  "file": "C:/Users/kagam/Documents/C++/Projects/GameEngine/src/VAO.cpp",
+  "output": "CMakeFiles/GameEngine.dir/src/VAO.cpp.obj"
+},
+{
+  "directory": "C:/Users/kagam/Documents/C++/Projects/GameEngine/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/GameEngine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/GameEngine.dir/src/VBO.cpp.obj -c C:/Users/kagam/Documents/C++/Projects/GameEngine/src/VBO.cpp",
+  "file": "C:/Users/kagam/Documents/C++/Projects/GameEngine/src/VBO.cpp",
+  "output": "CMakeFiles/GameEngine.dir/src/VBO.cpp.obj"
+},
+{
+  "directory": "C:/Users/kagam/Documents/C++/Projects/GameEngine/build",
   "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/GameEngine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/GameEngine.dir/src/main.cpp.obj -c C:/Users/kagam/Documents/C++/Projects/GameEngine/src/main.cpp",
   "file": "C:/Users/kagam/Documents/C++/Projects/GameEngine/src/main.cpp",
   "output": "CMakeFiles/GameEngine.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/kagam/Documents/C++/Projects/GameEngine/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/GameEngine.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/GameEngine.dir/src/shader.cpp.obj -c C:/Users/kagam/Documents/C++/Projects/GameEngine/src/shader.cpp",
+  "file": "C:/Users/kagam/Documents/C++/Projects/GameEngine/src/shader.cpp",
+  "output": "CMakeFiles/GameEngine.dir/src/shader.cpp.obj"
 }
 ]

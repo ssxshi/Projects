@@ -1,0 +1,1 @@
+g++ .\glad.c .\main.cpp .\EBO.cpp .\shader.cpp .\VAO.cpp .\VBO.cpp -I..\include\ -I..\external\glfw\include\ -L..\external\glfw\lib\ -lglfw3 -lopengl32 -lgdi32 -o main.exe

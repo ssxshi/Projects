@@ -1,1 +1,1 @@
--IC:/Users/kagam/Documents/C++/Projects/GameEngine/external/glfw/include
+-IC:/Users/kagam/Documents/C++/Projects/GameEngine/external/glfw/include -IC:/Users/kagam/Documents/C++/Projects/GameEngine/include -I"C:/Users/kagam/Documents/C++/Projects/GameEngine/(" -I"C:/Users/kagam/Documents/C++/Projects/GameEngine/)"
